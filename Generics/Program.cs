@@ -7,7 +7,7 @@ namespace Generics
         public static void Main(string[] args)
         {
             Console.WriteLine("Choose option from below");
-            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat\n3.FindMaximumString\n4.Find Maximum Value using Generic Method");
+            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat\n3.FindMaximumString\n4.Find Maximum Value using Generic Method\n5.Find Maximum value using Generic Class");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -82,6 +82,42 @@ namespace Generics
 
                     string result2 = FindMaxUsingGenerics<string>.MaxValue(string1, string2, string3);
                     Console.WriteLine("{0} is largest ", result2);
+                    Console.WriteLine("****************************");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Enter first integer number");
+                    int int1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter second integer number");
+                    int int2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter third integer number");
+                    int int3 = Convert.ToInt32(Console.ReadLine());
+
+                    FindMaxUsingGenericClass<int> obj = new FindMaxUsingGenericClass<int>(int1, int2, int3);
+                   Console.WriteLine("{0} is largest ", obj.TestMaximum());
+                    
+                    Console.WriteLine("****************************");
+
+                    Console.WriteLine("Enter first floating point number");
+                    double floatNo1 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter second floating point number");
+                    double floatNo2 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter third floating point number");
+                    double floatNo3 = Convert.ToDouble(Console.ReadLine());
+
+                    FindMaxUsingGenericClass<double> obj1 = new FindMaxUsingGenericClass<double>(floatNo1, floatNo2, floatNo3);
+                    Console.WriteLine("{0} is largest ", obj1.TestMaximum());
+                    Console.WriteLine("****************************");
+
+                    Console.WriteLine("Enter first string");
+                    string st1 = Console.ReadLine();
+                    Console.WriteLine("Enter second string");
+                    string st2 = Console.ReadLine();
+                    Console.WriteLine("Enter third string");
+                    string st3 = Console.ReadLine();
+
+                    FindMaxUsingGenericClass<string> obj2 = new FindMaxUsingGenericClass<string>(st1, st2, st3);
+                    Console.WriteLine("{0} is largest ", obj2.TestMaximum());
                     Console.WriteLine("****************************");
                     break;
             }
