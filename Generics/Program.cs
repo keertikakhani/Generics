@@ -7,7 +7,7 @@ namespace Generics
         public static void Main(string[] args)
         {
             Console.WriteLine("Choose option from below");
-            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat");
+            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat\n3.FindMaximumString");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -34,6 +34,19 @@ namespace Generics
 
                     double value1 = MaximumFloat.MaximumFloatNumber(num1, num2, num3);
                     Console.WriteLine("{0} is largest ", value1);
+                    Console.WriteLine("****************************");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Enter first string");
+                    string str1 = Console.ReadLine();
+                    Console.WriteLine("Enter second string");
+                    string str2 = Console.ReadLine();
+                    Console.WriteLine("Enter third string");
+                    string str3 = Console.ReadLine();
+
+                    string value2 = MaximumString.MaxString(str1, str2, str3);
+                    Console.WriteLine("{0} is largest ", value2);
                     Console.WriteLine("****************************");
                     break;
             }
