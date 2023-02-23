@@ -7,7 +7,7 @@ namespace Generics
         public static void Main(string[] args)
         {
             Console.WriteLine("Choose option from below");
-            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat\n3.FindMaximumString");
+            Console.WriteLine("1.FindMaximumInteger\n2.FindMaximumFloat\n3.FindMaximumString\n4.Find Maximum Value using Generic Method");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -49,8 +49,44 @@ namespace Generics
                     Console.WriteLine("{0} is largest ", value2);
                     Console.WriteLine("****************************");
                     break;
+
+                case 4:
+                    Console.WriteLine("Enter first integer number");
+                    int integer1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter second integer number");
+                    int integer2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter third integer number");
+                    int integer3 = Convert.ToInt32(Console.ReadLine());
+
+                    int result = FindMaxUsingGenerics<int>.MaxValue(integer1, integer2, integer3);
+                    Console.WriteLine("{0} is largest ", result);
+                    Console.WriteLine("****************************");
+
+                    Console.WriteLine("Enter first floating point number");
+                    double float1 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter second floating point number");
+                    double float2 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter third floating point number");
+                    double float3 = Convert.ToDouble(Console.ReadLine());
+
+                    double result1 = FindMaxUsingGenerics<double>.MaxValue(float1, float2, float3);
+                    Console.WriteLine("{0} is largest ", result1);
+                    Console.WriteLine("****************************");
+
+                    Console.WriteLine("Enter first string");
+                    string string1 = Console.ReadLine();
+                    Console.WriteLine("Enter second string");
+                    string string2 = Console.ReadLine();
+                    Console.WriteLine("Enter third string");
+                    string string3 = Console.ReadLine();
+
+                    string result2 = FindMaxUsingGenerics<string>.MaxValue(string1, string2, string3);
+                    Console.WriteLine("{0} is largest ", result2);
+                    Console.WriteLine("****************************");
+                    break;
             }
-               Console.ReadLine();
+
+                    Console.ReadLine();
         }
     }
 }
